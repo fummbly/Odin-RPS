@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
+
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1 id="title">Rock Paper Scissors</h1>
+    <h3 id="subtitle">Best of 3</h3>
+    <div id="game-board">
+        <div id="player-side" class="side">
+            <h2>Player</h2>
+            <ul id="player-score" class="score-board">
+                <li class="point"></li>
+                <li class="point"></li>
+            </ul>
+            <ul id="player-buttons" class="button-container">
+                <li><button id="rock"><i class="fa fa-hand-rock-o"></i></button></li>
+                <li><button id="paper"><i class="fa fa-hand-paper-o"></i></button></li>
+                <li><button id="scissors"><i class="fa fa-hand-scissors-o"></i></button></li>
+            </ul>
+        </div>
+        <div id="computer-side" class="side">
+            <h2>Computer</h2>
+            <ul id="computer-score" class="score-board">
+                <li class="point"></li>
+                <li class="point"></li>
+            </ul>
+            <ul id="computer-buttons" class="button-container">
+                <li><button><i class="fa fa-hand-rock-o"></i></button></li>
+                <li><button><i class="fa fa-hand-paper-o"></i></button></li>
+                <li><button><i class="fa fa-hand-scissors-o"></i></button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="rps.js"></script>
+</html>
