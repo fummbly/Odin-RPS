@@ -36,7 +36,7 @@ ul {
     justify-content: space-evenly;
 }
 
-.point {
+.point-dot {
     background-color: darkgray;
     width: 1.5rem;
     aspect-ratio: 1;
@@ -56,6 +56,41 @@ ul {
     aspect-ratio: 1;
     margin: 1rem;
     font-size: 2rem;
+    transition: all 0.2s ease-in-out;
 
 }
 
+
+.point {
+    background-color: green;
+}
+
+
+.hide {
+    filter: blur(1rem);
+    transition: all 0.2s ease-in-out;
+}
+
+#overlay {
+    position: absolute;
+    background-color: aliceblue;
+    padding: 5rem 8rem;
+    border-radius: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    top: 20%;
+}
+
+#restart {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.inactive {
+    display: none;
+}
+
+.active {
+    display: flex;
+}

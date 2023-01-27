@@ -10,33 +10,43 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1 id="title">Rock Paper Scissors</h1>
-    <h3 id="subtitle">Best of 3</h3>
-    <div id="game-board">
-        <div id="player-side" class="side">
-            <h2>Player</h2>
-            <ul id="player-score" class="score-board">
-                <li class="point"></li>
-                <li class="point"></li>
-            </ul>
-            <ul id="player-buttons" class="button-container">
-                <li><button id="rock"><i class="fa fa-hand-rock-o"></i></button></li>
-                <li><button id="paper"><i class="fa fa-hand-paper-o"></i></button></li>
-                <li><button id="scissors"><i class="fa fa-hand-scissors-o"></i></button></li>
-            </ul>
+    <div id="game">
+        <h1 id="title">Rock Paper Scissors</h1>
+        <h3 id="subtitle">Best of 3</h3>
+        <h2 id="result"></h2>
+        <div id="game-board">
+            <div id="player-side" class="side">
+                <h2>Player</h2>
+                <ul id="player-score" class="score-board">
+                    <li id="p-1" class="point-dot"></li>
+                    <li id="p-2" class="point-dot"></li>
+                </ul>
+                <ul id="player-buttons" class="button-container">
+                    <li><button id="rock"><i class="fa fa-hand-rock-o"></i></button></li>
+                    <li><button id="paper"><i class="fa fa-hand-paper-o"></i></button></li>
+                    <li><button id="scissors"><i class="fa fa-hand-scissors-o"></i></button></li>
+                </ul>
+            </div>
+            <div id="computer-side" class="side">
+                <h2>Computer</h2>
+                <ul id="computer-score" class="score-board">
+                    <li id="c-1" class="point-dot"></li>
+                    <li id="c-2" class="point-dot"></li>
+                </ul>
+                <ul id="computer-buttons" class="button-container">
+                    <li><button><i class="fa fa-hand-rock-o"></i></button></li>
+                    <li><button><i class="fa fa-hand-paper-o"></i></button></li>
+                    <li><button><i class="fa fa-hand-scissors-o"></i></button></li>
+                </ul>
+            </div>
+            
         </div>
-        <div id="computer-side" class="side">
-            <h2>Computer</h2>
-            <ul id="computer-score" class="score-board">
-                <li class="point"></li>
-                <li class="point"></li>
-            </ul>
-            <ul id="computer-buttons" class="button-container">
-                <li><button><i class="fa fa-hand-rock-o"></i></button></li>
-                <li><button><i class="fa fa-hand-paper-o"></i></button></li>
-                <li><button><i class="fa fa-hand-scissors-o"></i></button></li>
-            </ul>
-        </div>
+    </div>
+
+    <div id="overlay" class="inactive">
+        <h1>Game Over</h1>
+        <h2 id="winner"></h2>
+        <button id="restart">Restart</button>
     </div>
 </body>
 <script src="rps.js"></script>
