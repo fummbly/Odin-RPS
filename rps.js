@@ -45,12 +45,14 @@ function restartGame() {
     computerScore = 0;
     overlay.classList.remove('active')
     game.classList.remove('hide')
+    resultText.innerHTML = ""
     for(child of playerPoints) {
         child.classList.remove('point')
     }
     for(child of computerPoints) {
         child.classList.remove('point')
     }
+    unhideButtons()
 }
 
 function computerMove() {
@@ -64,12 +66,10 @@ function addPoint(person) {
     switch(person) {
         case 1:
             playerScore++
-            console.log("Player Score: ",playerScore)
             playerPoints[playerScore - 1].classList.add('point')
             break;
         case 2:
             computerScore++;
-            console.log("Computer Score: ",computerScore)
             computerPoints[computerScore - 1].classList.add('point')
             break
     }
@@ -78,18 +78,19 @@ function addPoint(person) {
 function compareMoves(player, computer) {
     if(player === computer) {
         resultText.innerHTML = "Tie"
-        return;
+        return 0
     }
     else if((player === 1 && computer === 3) ||
             (player === 2 && computer === 1) ||
             (player === 3 && computer === 2)) {
                 addPoint(1)
                 resultText.innerHTML = "Player wins"
-                return 
+                return 1;
             }
     else {
         resultText.innerHTML = "Computer wins"
         addPoint(2)
+        return 2;
     }
 }
 
@@ -101,11 +102,13 @@ function hideButtons(playerSelection, computerSelection) {
 
     playerButtons[playerSelection - 1].classList.remove('hide')
 
+
     for(child of computerButtons) {
         child.classList.add('hide')
     }
 
     computerButtons[computerSelection - 1].classList.remove('hide')
+
 
 }
 
@@ -125,12 +128,11 @@ function handleClick(selection) {
     if(gameOver()) {
         return
     }
-    
-    console.log('game continues')
 
     const computerSelection = computerMove()
-    hideButtons(selection, computerSelection)
+    
     const outcome = compareMoves(selection, computerSelection)
+    hideButtons(selection, computerSelection, outcome)
     setTimeout(unhideButtons, 2000)
     if(gameOver()) {
         return
